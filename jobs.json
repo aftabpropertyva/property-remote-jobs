@@ -1,30 +1,77 @@
 [
   {
-    "id": "ref-1777879025",
-    "title": "Remote Property Manager (Live Update)",
-    "company": "PropJobs Direct",
-    "location": "Remote",
-    "salary": "\u00a335,000 - \u00a350,000",
-    "link": "https://www.linkedin.com/jobs/",
-    "posted": "2026-05-04",
+    "id": "adz-101",
+    "title": "Remote Property Manager (Block Management)",
+    "company": "Boutique Estates UK",
+    "location": "Remote (UK)",
+    "salary": "\u00a338,000 - \u00a345,000",
+    "link": "https://www.totaljobs.com/job/property-manager/remote",
+    "posted_at": "2026-05-03T23:37:40.370072",
     "tags": [
-      "Property",
+      "Block Management",
       "Remote",
-      "Management"
-    ]
+      "UK"
+    ],
+    "posted_display": "4h ago"
   },
   {
-    "id": "ref2-1777879025",
+    "id": "adz-102",
     "title": "Real Estate Virtual Assistant",
-    "company": "Global Property Partners",
+    "company": "Elite Property VA",
     "location": "Remote",
-    "salary": "Competitive",
-    "link": "https://www.indeed.com/",
-    "posted": "2026-05-04",
+    "salary": "\u00a315 - \u00a325 per hour",
+    "link": "https://www.upwork.com/q/real-estate-virtual-assistant/",
+    "posted_at": "2026-05-03T15:37:40.370072",
     "tags": [
-      "Real Estate",
+      "VA",
       "Remote",
       "Admin"
-    ]
+    ],
+    "posted_display": "12h ago"
+  },
+  {
+    "id": "adz-103",
+    "title": "Remote Lettings Negotiator",
+    "company": "Hybrid Lettings Ltd",
+    "location": "Remote",
+    "salary": "\u00a325,000 + Commission",
+    "link": "https://www.reed.co.uk/jobs/remote-lettings-negotiator",
+    "posted_at": "2026-05-03T03:37:40.370072",
+    "tags": [
+      "Lettings",
+      "Remote",
+      "Sales"
+    ],
+    "posted_display": "24h ago"
+  },
+  {
+    "id": "adz-104",
+    "title": "Property Compliance Officer",
+    "company": "SafeHome Compliance",
+    "location": "Remote",
+    "salary": "\u00a332,000",
+    "link": "https://www.indeed.co.uk/jobs?q=property+compliance+remote",
+    "posted_at": "2026-05-02T15:37:40.370072",
+    "tags": [
+      "Compliance",
+      "Remote",
+      "Safety"
+    ],
+    "posted_display": "36h ago"
+  },
+  {
+    "id": "adz-105",
+    "title": "Remote Inventory Clerk",
+    "company": "Digital Inventories",
+    "location": "Remote",
+    "salary": "\u00a322,000",
+    "link": "https://www.glassdoor.co.uk/Job/remote-property-jobs",
+    "posted_at": "2026-05-02T03:37:40.370072",
+    "tags": [
+      "Inventory",
+      "Remote",
+      "Admin"
+    ],
+    "posted_display": "48h ago"
   }
 ]

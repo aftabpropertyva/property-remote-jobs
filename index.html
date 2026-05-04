@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PropJobs Remote | Obsidian Edition</title>
+    <title>Remote Property Jobs | Expert-Curated Board</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f1115; }
+        .font-serif { font-family: 'Playfair Display', serif; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .job-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .job-card:hover { transform: translateY(-4px); border-color: #10b981; }
     </style>
 </head>
 <body class="text-gray-100" x-data="jobBoard()">
@@ -24,23 +27,30 @@
                 <span class="font-bold text-xl tracking-tight text-white">PropJobs <span class="text-emerald-500">Remote</span></span>
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
-                <a href="#" class="hover:text-emerald-400 transition-colors">Browse</a>
-                <a href="#" class="hover:text-emerald-400 transition-colors">How it works</a>
-                <a href="#" class="px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20 hover:bg-emerald-500 transition-all hover:text-[#0f1115]">Post a Job</a>
+                <span class="flex items-center gap-2 text-emerald-500">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Live Refresh: Every 3 Hours
+                </span>
+                <a href="https://aftabpropertyva.github.io/propertyaura-portfolio/" class="hover:text-emerald-400 transition-colors">Back to Portfolio</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Header Section -->
-        <div class="mb-12">
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-                Property Sector <br>
-                <span class="text-emerald-500">Remote Opportunities</span>
+        <!-- Expert Header Section -->
+        <div class="mb-16 text-center md:text-left">
+            <div class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest mb-6">
+                Expert Advice: Focus on Niche Listings
+            </div>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight">
+                Fresh Remote <br>
+                <span class="text-emerald-500">Property Careers</span>
             </h1>
-            <p class="text-gray-400 text-lg max-w-2xl">
-                Connecting real estate professionals with location-independent roles. 
-                Automated daily aggregation from top property platforms.
+            <p class="text-gray-400 text-xl max-w-3xl leading-relaxed">
+                Curated by a property expert with 20+ years of experience. We only show jobs posted in the last <span class="text-white font-bold">50 hours</span> from niche platforms to give you the best chance of landing a role.
             </p>
         </div>
 
@@ -58,90 +68,80 @@
         </div>
 
         <!-- Search and Filter -->
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div class="flex flex-col md:flex-row gap-4 mb-12">
             <div class="relative flex-1">
                 <div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
                 <input 
                     type="text" 
-                    placeholder="Search by title or company..." 
+                    placeholder="Search by role, company, or keyword..." 
                     x-model="searchQuery"
-                    class="w-full bg-[#1a1c23] border border-emerald-500/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-emerald-500/50 transition-all"
+                    class="w-full bg-[#1a1c23] border border-emerald-500/10 rounded-2xl py-5 pl-12 pr-4 text-white focus:outline-none focus:border-emerald-500/50 transition-all shadow-2xl"
                 >
-            </div>
-            <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-                <button 
-                    @click="filterTag = null"
-                    :class="!filterTag ? 'bg-emerald-500 text-[#0f1115]' : 'bg-[#1a1c23] text-gray-400 border border-emerald-500/10 hover:border-emerald-500/30'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap"
-                >All Roles</button>
-                <template x-for="tag in allTags">
-                    <button 
-                        @click="filterTag = tag"
-                        :class="filterTag === tag ? 'bg-emerald-500 text-[#0f1115]' : 'bg-[#1a1c23] text-gray-400 border border-emerald-500/10 hover:border-emerald-500/30'"
-                        class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap"
-                        x-text="tag"
-                    ></button>
-                </template>
             </div>
         </div>
 
         <!-- Job Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <template x-for="job in filteredJobs" :key="job.id || Math.random()">
-                <div class="bg-[#1a1c23] border border-emerald-500/10 p-8 rounded-[2rem] flex flex-col h-full hover:border-emerald-500/40 transition-all group relative overflow-hidden">
-                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-emerald-500/5 blur-3xl group-hover:bg-emerald-500/10 transition-all"></div>
-                    
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-[#0f1115] rounded-2xl border border-emerald-500/10 text-emerald-500">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <template x-for="job in filteredJobs" :key="job.id">
+                <div class="job-card bg-[#1a1c23] border border-emerald-500/10 p-8 rounded-[2.5rem] flex flex-col h-full relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-4 bg-[#0f1115] rounded-2xl border border-emerald-500/10 text-emerald-500">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
-                        <div class="flex flex-col items-end gap-1">
-                            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-emerald-500/20">Remote</span>
-                            <span class="text-gray-600 text-[10px] flex items-center gap-1 mt-1" x-text="job.posted_at || job.date || 'Recently'"></span>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="bg-emerald-500 text-[#0f1115] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">New</span>
+                            <span class="text-emerald-400 text-xs font-bold" x-text="job.posted_display"></span>
                         </div>
                     </div>
 
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors leading-tight" x-text="job.title"></h3>
-                        <p class="text-gray-400 font-medium mb-4 flex items-center gap-2">
-                             <span x-text="job.company"></span>
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <template x-for="tag in (job.tags || [])">
-                                <span class="text-xs bg-[#0f1115] text-gray-500 px-3 py-1 rounded-lg border border-gray-800" x-text="tag"></span>
+                        <h3 class="text-2xl font-bold text-white mb-3 leading-tight" x-text="job.title"></h3>
+                        <p class="text-gray-400 text-lg font-medium mb-6" x-text="job.company"></p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <template x-for="tag in job.tags">
+                                <span class="text-xs bg-[#0f1115] text-emerald-500/70 px-4 py-1.5 rounded-xl border border-emerald-500/10" x-text="tag"></span>
                             </template>
                         </div>
                     </div>
 
-                    <div class="pt-6 border-t border-emerald-500/5 flex items-center justify-between">
+                    <div class="pt-8 border-t border-emerald-500/5 flex items-center justify-between">
                         <div class="flex flex-col">
-                            <span class="text-[10px] uppercase text-gray-600 font-bold tracking-wider mb-1">Salary Range</span>
-                            <span class="text-white font-bold" x-text="job.salary || 'Competitive'"></span>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest mb-1">Est. Salary</span>
+                            <span class="text-white font-bold text-lg" x-text="job.salary"></span>
                         </div>
-                        <a :href="job.link" target="_blank" class="bg-emerald-500 text-[#0f1115] p-3 rounded-2xl hover:scale-105 transition-all shadow-lg shadow-emerald-500/20">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <a :href="job.link" target="_blank" class="bg-emerald-500 text-[#0f1115] px-6 py-3 rounded-2xl font-bold hover:scale-105 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2">
+                            Apply
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
             </template>
         </div>
 
-        <div x-show="filteredJobs.length === 0" class="text-center py-24">
-            <h3 class="text-xl font-medium text-gray-300">No jobs found</h3>
-            <p class="text-gray-500">Try adjusting your search or filters.</p>
+        <div x-show="filteredJobs.length === 0" class="text-center py-32">
+            <div class="text-6xl mb-6">🔍</div>
+            <h3 class="text-2xl font-bold text-white mb-2">No fresh jobs found</h3>
+            <p class="text-gray-500">We only show jobs from the last 50 hours. Check back in a few hours!</p>
         </div>
     </main>
 
-    <footer class="border-t border-emerald-500/10 py-12 mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-gray-500 text-sm">© 2026 PropJobs Remote. Built for the modern property era.</div>
-            <div class="flex gap-6 text-gray-500 text-sm">
-                <a href="#" class="hover:text-emerald-400">Privacy</a>
-                <a href="#" class="hover:text-emerald-400">Terms</a>
-                <a href="#" class="hover:text-emerald-400">Contact</a>
+    <footer class="border-t border-emerald-500/10 py-16 mt-32 bg-[#0a0c10]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <span class="font-bold text-2xl tracking-tight text-white">PropJobs <span class="text-emerald-500">Remote</span></span>
             </div>
+            <p class="text-gray-500 text-sm mb-8 max-w-xl mx-auto">
+                Expert-led job aggregation for the modern property professional. 
+                Focusing on speed, freshness, and niche opportunities.
+            </p>
+            <div class="flex justify-center gap-8 text-gray-400 text-sm font-medium">
+                <a href="https://aftabpropertyva.github.io/propertyaura-portfolio/" class="hover:text-emerald-400 transition-colors">Portfolio</a>
+                <a href="https://www.linkedin.com/in/aftab-property-va/" class="hover:text-emerald-400 transition-colors">LinkedIn</a>
+                <a href="mailto:aftab.propertyva@gmail.com" class="hover:text-emerald-400 transition-colors">Contact</a>
+            </div>
+            <div class="mt-12 text-gray-600 text-xs">© 2026 PropJobs Remote. All rights reserved.</div>
         </div>
     </footer>
 
@@ -150,12 +150,11 @@
             return {
                 jobs: [],
                 searchQuery: '',
-                filterTag: null,
                 stats: [
-                    { label: 'Live Jobs', value: 0, icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2"></path></svg>' },
-                    { label: 'Remote Only', value: '100%', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" stroke-width="2"></path></svg>' },
-                    { label: 'Avg. Salary', value: '$85k', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-width="2"></path></svg>' },
-                    { label: 'Last Sync', value: '1h ago', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"></path></svg>' }
+                    { label: 'Fresh Jobs', value: '0', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"></path></svg>' },
+                    { label: 'Max Age', value: '50h', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"></path></svg>' },
+                    { label: 'Niche Focus', value: '100%', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"></path></svg>' },
+                    { label: 'Success Rate', value: 'High', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-width="2"></path></svg>' }
                 ],
                 async init() {
                     try {
@@ -167,15 +166,13 @@
                     }
                 },
                 get filteredJobs() {
-                    return this.jobs.filter(job => {
-                        const matchesSearch = job.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                                            job.company.toLowerCase().includes(this.searchQuery.toLowerCase());
-                        const matchesTag = !this.filterTag || (job.tags && job.tags.includes(this.filterTag));
-                        return matchesSearch && matchesTag;
-                    });
-                },
-                get allTags() {
-                    return [...new Set(this.jobs.flatMap(j => j.tags || []))];
+                    if (!this.searchQuery) return this.jobs;
+                    const q = this.searchQuery.toLowerCase();
+                    return this.jobs.filter(job => 
+                        job.title.toLowerCase().includes(q) || 
+                        job.company.toLowerCase().includes(q) ||
+                        job.tags.some(t => t.toLowerCase().includes(q))
+                    );
                 }
             }
         }
