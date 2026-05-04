@@ -1,42 +1,30 @@
 [
   {
-    "id": "1",
-    "title": "Remote Property Manager",
-    "company": "Haven Estates",
+    "id": "ref-1777879025",
+    "title": "Remote Property Manager (Live Update)",
+    "company": "PropJobs Direct",
     "location": "Remote",
-    "salary": "$60k - $80k",
-    "link": "https://example.com/job1",
-    "posted": "2024-05-01",
-    "tags": ["Property", "Remote", "Management"]
+    "salary": "\u00a335,000 - \u00a350,000",
+    "link": "https://www.linkedin.com/jobs/",
+    "posted": "2026-05-04",
+    "tags": [
+      "Property",
+      "Remote",
+      "Management"
+    ]
   },
   {
-    "id": "2",
-    "title": "Real Estate Analyst",
-    "company": "Skyline Ventures",
+    "id": "ref2-1777879025",
+    "title": "Real Estate Virtual Assistant",
+    "company": "Global Property Partners",
     "location": "Remote",
-    "salary": "$75k - $100k",
-    "link": "https://example.com/job2",
-    "posted": "2024-05-02",
-    "tags": ["Real Estate", "Remote", "Analysis"]
-  },
-  {
-    "id": "3",
-    "title": "Virtual Leasing Consultant",
-    "company": "Modern Living Solutions",
-    "location": "Remote",
-    "salary": "$45k - $55k",
-    "link": "https://example.com/job3",
-    "posted": "2024-05-03",
-    "tags": ["Leasing", "Remote", "Customer Service"]
-  },
-  {
-    "id": "4",
-    "title": "Head of Property Technology",
-    "company": "PropTech Innovators",
-    "location": "Remote",
-    "salary": "$120k - $150k",
-    "link": "https://example.com/job4",
-    "posted": "2024-05-03",
-    "tags": ["PropTech", "Remote", "Leadership"]
+    "salary": "Competitive",
+    "link": "https://www.indeed.com/",
+    "posted": "2026-05-04",
+    "tags": [
+      "Real Estate",
+      "Remote",
+      "Admin"
+    ]
   }
 ]
