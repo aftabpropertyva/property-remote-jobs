@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Remote Property Manager",
+    "company": "Haven Estates",
+    "location": "Remote",
+    "salary": "$60k - $80k",
+    "link": "https://example.com/job1",
+    "posted": "2024-05-01",
+    "tags": ["Property", "Remote", "Management"]
+  },
+  {
+    "id": "2",
+    "title": "Real Estate Analyst",
+    "company": "Skyline Ventures",
+    "location": "Remote",
+    "salary": "$75k - $100k",
+    "link": "https://example.com/job2",
+    "posted": "2024-05-02",
+    "tags": ["Real Estate", "Remote", "Analysis"]
+  },
+  {
+    "id": "3",
+    "title": "Virtual Leasing Consultant",
+    "company": "Modern Living Solutions",
+    "location": "Remote",
+    "salary": "$45k - $55k",
+    "link": "https://example.com/job3",
+    "posted": "2024-05-03",
+    "tags": ["Leasing", "Remote", "Customer Service"]
+  },
+  {
+    "id": "4",
+    "title": "Head of Property Technology",
+    "company": "PropTech Innovators",
+    "location": "Remote",
+    "salary": "$120k - $150k",
+    "link": "https://example.com/job4",
+    "posted": "2024-05-03",
+    "tags": ["PropTech", "Remote", "Leadership"]
+  }
+]
