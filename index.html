@@ -89,7 +89,7 @@
 
         <!-- Job Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <template x-for="job in filteredJobs" :key="job.id">
+            <template x-for="job in filteredJobs" :key="job.id || Math.random()">
                 <div class="bg-[#1a1c23] border border-emerald-500/10 p-8 rounded-[2rem] flex flex-col h-full hover:border-emerald-500/40 transition-all group relative overflow-hidden">
                     <div class="absolute -top-12 -right-12 w-24 h-24 bg-emerald-500/5 blur-3xl group-hover:bg-emerald-500/10 transition-all"></div>
                     
@@ -99,7 +99,7 @@
                         </div>
                         <div class="flex flex-col items-end gap-1">
                             <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-emerald-500/20">Remote</span>
-                            <span class="text-gray-600 text-[10px] flex items-center gap-1 mt-1" x-text="job.posted"></span>
+                            <span class="text-gray-600 text-[10px] flex items-center gap-1 mt-1" x-text="job.posted_at || job.date || 'Recently'"></span>
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
                              <span x-text="job.company"></span>
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <template x-for="tag in job.tags">
+                            <template x-for="tag in (job.tags || [])">
                                 <span class="text-xs bg-[#0f1115] text-gray-500 px-3 py-1 rounded-lg border border-gray-800" x-text="tag"></span>
                             </template>
                         </div>
@@ -118,7 +118,7 @@
                     <div class="pt-6 border-t border-emerald-500/5 flex items-center justify-between">
                         <div class="flex flex-col">
                             <span class="text-[10px] uppercase text-gray-600 font-bold tracking-wider mb-1">Salary Range</span>
-                            <span class="text-white font-bold" x-text="job.salary"></span>
+                            <span class="text-white font-bold" x-text="job.salary || 'Competitive'"></span>
                         </div>
                         <a :href="job.link" target="_blank" class="bg-emerald-500 text-[#0f1115] p-3 rounded-2xl hover:scale-105 transition-all shadow-lg shadow-emerald-500/20">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -136,7 +136,7 @@
 
     <footer class="border-t border-emerald-500/10 py-12 mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-gray-500 text-sm">© 2024 PropJobs Remote. Built for the modern property era.</div>
+            <div class="text-gray-500 text-sm">© 2026 PropJobs Remote. Built for the modern property era.</div>
             <div class="flex gap-6 text-gray-500 text-sm">
                 <a href="#" class="hover:text-emerald-400">Privacy</a>
                 <a href="#" class="hover:text-emerald-400">Terms</a>
@@ -158,20 +158,24 @@
                     { label: 'Last Sync', value: '1h ago', icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"></path></svg>' }
                 ],
                 async init() {
-                    const res = await fetch('./jobs.json');
-                    this.jobs = await res.json();
-                    this.stats[0].value = this.jobs.length;
+                    try {
+                        const res = await fetch('./jobs.json');
+                        this.jobs = await res.json();
+                        this.stats[0].value = this.jobs.length;
+                    } catch (e) {
+                        console.error("Error loading jobs:", e);
+                    }
                 },
                 get filteredJobs() {
                     return this.jobs.filter(job => {
                         const matchesSearch = job.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
                                             job.company.toLowerCase().includes(this.searchQuery.toLowerCase());
-                        const matchesTag = !this.filterTag || job.tags.includes(this.filterTag);
+                        const matchesTag = !this.filterTag || (job.tags && job.tags.includes(this.filterTag));
                         return matchesSearch && matchesTag;
                     });
                 },
                 get allTags() {
-                    return [...new Set(this.jobs.flatMap(j => j.tags))];
+                    return [...new Set(this.jobs.flatMap(j => j.tags || []))];
                 }
             }
         }
