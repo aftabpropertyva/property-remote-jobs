@@ -1,0 +1,36 @@
+name: Refresh Property Jobs
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' # Every 3 hours
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-with: '3.x'
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+          pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add jobs.json
+          git commit -m "Automated job update [skip ci]" || echo "No changes to commit"
+          git push
