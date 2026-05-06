@@ -1,77 +1,68 @@
 [
   {
-    "id": "adz-101",
-    "title": "Remote Property Manager (Block Management)",
-    "company": "Boutique Estates UK",
+    "id": "ind-001",
+    "title": "Consultant Commercial Property Solicitor",
+    "company": "Lucid Advice Limited",
     "location": "Remote (UK)",
-    "salary": "\u00a338,000 - \u00a345,000",
-    "link": "https://www.totaljobs.com/job/property-manager/remote",
-    "posted_at": "2026-05-05T00:06:53.995458",
-    "tags": [
-      "Block Management",
-      "Remote",
-      "UK"
-    ],
+    "salary": "£50 - £250 per hour",
+    "link": "https://uk.indeed.com/viewjob?jk=fda0970c3f29c8e7",
+    "posted_at": "2026-05-05T09:00:00.000000",
+    "tags": ["Solicitor", "Commercial Property", "Remote"],
+    "posted_display": "1h ago"
+  },
+  {
+    "id": "ind-002",
+    "title": "Business Development Manager – Landlord Acquisition",
+    "company": "LUXURY LONDON STAYS",
+    "location": "Remote (UK)",
+    "salary": "£30,000 - £45,000 per year",
+    "link": "https://uk.indeed.com/viewjob?jk=83db454c6fad8ca3",
+    "posted_at": "2026-05-05T08:30:00.000000",
+    "tags": ["Business Development", "Landlord Acquisition", "Remote"],
+    "posted_display": "2h ago"
+  },
+  {
+    "id": "ind-003",
+    "title": "Dispute Resolution Solicitor",
+    "company": "Osbourne Pinner Solicitors",
+    "location": "Remote (UK)",
+    "salary": "£48,000 - £52,000 per year",
+    "link": "https://uk.indeed.com/viewjob?jk=0b7c63e7f6e081ee",
+    "posted_at": "2026-05-05T07:00:00.000000",
+    "tags": ["Solicitor", "Dispute Resolution", "Remote"],
+    "posted_display": "3h ago"
+  },
+  {
+    "id": "reed-001",
+    "title": "Remote Property Investment Sales",
+    "company": "Verta Property Group",
+    "location": "Remote (UK)",
+    "salary": "£100,000 - £150,000 (Commission Only)",
+    "link": "https://www.reed.co.uk/jobs/remote-property-investment-sales-commission-only-uk/52485632",
+    "posted_at": "2026-05-05T10:00:00.000000",
+    "tags": ["Sales", "Investment", "Remote"],
+    "posted_display": "Just now"
+  },
+  {
+    "id": "reed-002",
+    "title": "Remote Sales Valuer",
+    "company": "The Recruitment Experts",
+    "location": "Remote (Woodbridge)",
+    "salary": "£40,000 - £50,000 per year",
+    "link": "https://www.reed.co.uk/jobs/remote-sales-valuer-woodbridge/52484211",
+    "posted_at": "2026-05-05T06:00:00.000000",
+    "tags": ["Valuer", "Sales", "Remote"],
     "posted_display": "4h ago"
   },
   {
-    "id": "adz-102",
-    "title": "Real Estate Virtual Assistant",
-    "company": "Elite Property VA",
-    "location": "Remote",
-    "salary": "\u00a315 - \u00a325 per hour",
-    "link": "https://www.upwork.com/q/real-estate-virtual-assistant/",
-    "posted_at": "2026-05-04T16:06:53.995458",
-    "tags": [
-      "VA",
-      "Remote",
-      "Admin"
-    ],
-    "posted_display": "12h ago"
-  },
-  {
-    "id": "adz-103",
-    "title": "Remote Lettings Negotiator",
-    "company": "Hybrid Lettings Ltd",
-    "location": "Remote",
-    "salary": "\u00a325,000 + Commission",
-    "link": "https://www.reed.co.uk/jobs/remote-lettings-negotiator",
-    "posted_at": "2026-05-04T04:06:53.995458",
-    "tags": [
-      "Lettings",
-      "Remote",
-      "Sales"
-    ],
-    "posted_display": "24h ago"
-  },
-  {
-    "id": "adz-104",
-    "title": "Property Compliance Officer",
-    "company": "SafeHome Compliance",
-    "location": "Remote",
-    "salary": "\u00a332,000",
-    "link": "https://www.indeed.co.uk/jobs?q=property+compliance+remote",
-    "posted_at": "2026-05-03T16:06:53.995458",
-    "tags": [
-      "Compliance",
-      "Remote",
-      "Safety"
-    ],
-    "posted_display": "36h ago"
-  },
-  {
-    "id": "adz-105",
-    "title": "Remote Inventory Clerk",
-    "company": "Digital Inventories",
-    "location": "Remote",
-    "salary": "\u00a322,000",
-    "link": "https://www.glassdoor.co.uk/Job/remote-property-jobs",
-    "posted_at": "2026-05-03T04:06:53.995458",
-    "tags": [
-      "Inventory",
-      "Remote",
-      "Admin"
-    ],
-    "posted_display": "48h ago"
+    "id": "reed-003",
+    "title": "Property Litigator - Remote Working",
+    "company": "GM Legal Recruitment",
+    "location": "Remote (UK)",
+    "salary": "Competitive",
+    "link": "https://www.reed.co.uk/jobs/property-litigator-remote-working/52483105",
+    "posted_at": "2026-05-04T15:00:00.000000",
+    "tags": ["Litigator", "Legal", "Remote"],
+    "posted_display": "Yesterday"
   }
 ]
