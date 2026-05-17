@@ -12,7 +12,7 @@
       "Investment",
       "Remote"
     ],
-    "posted_display": "20h ago"
+    "posted_display": "Yesterday"
   },
   {
     "id": "ind-001",
@@ -27,7 +27,7 @@
       "Commercial Property",
       "Remote"
     ],
-    "posted_display": "21h ago"
+    "posted_display": "Yesterday"
   },
   {
     "id": "ind-002",
@@ -42,7 +42,7 @@
       "Landlord Acquisition",
       "Remote"
     ],
-    "posted_display": "21h ago"
+    "posted_display": "Yesterday"
   },
   {
     "id": "ind-003",
@@ -57,7 +57,7 @@
       "Dispute Resolution",
       "Remote"
     ],
-    "posted_display": "23h ago"
+    "posted_display": "Yesterday"
   },
   {
     "id": "reed-002",
@@ -70,21 +70,6 @@
     "tags": [
       "Valuer",
       "Sales",
-      "Remote"
-    ],
-    "posted_display": "Yesterday"
-  },
-  {
-    "id": "reed-003",
-    "title": "Property Litigator - Remote Working",
-    "company": "GM Legal Recruitment",
-    "location": "Remote (UK)",
-    "salary": "Competitive",
-    "link": "https://www.reed.co.uk/jobs/property-litigator-remote-working/52483105",
-    "posted_at": "2026-05-14T15:00:00.000000",
-    "tags": [
-      "Litigator",
-      "Legal",
       "Remote"
     ],
     "posted_display": "Yesterday"
